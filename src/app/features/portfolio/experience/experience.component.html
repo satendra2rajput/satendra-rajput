@@ -1,0 +1,110 @@
+<section id="experience" class="wrap sec" aria-labelledby="exp-h">
+  <div class="sec__h" appReveal>
+    <div>
+      <p class="eyebrow"><b>01</b>Experience</p>
+      <h2 id="exp-h" class="h2">Four and a half years<br />of shipping.</h2>
+    </div>
+  </div>
+
+  <div class="bento">
+    <!-- ================= Timeline (newest first) ================= -->
+    <article class="card c7" appReveal>
+      <h3>Timeline <span class="tagx personal">{{ currentCount }} current</span></h3>
+
+      <ul class="tl" appReveal>
+        @for (e of entries; track e.org) {
+          <li [class.now]="!e.to">
+            <small>
+              {{ e.from | period: e.to }}
+              <span class="dur">{{ e.from | duration: e.to }}</span>
+            </small>
+
+            <h4>
+              <img
+                class="klogo klogo--h4"
+                [class.klogo--tile]="e.tile"
+                [src]="e.logo"
+                [alt]="e.org + ' logo'"
+                width="34"
+                height="34"
+              />{{ e.org }}
+              <span class="tagx" [class.personal]="e.kind === 'Personal'">{{ e.kind }}</span>
+            </h4>
+
+            @if (e.roles; as roles) {
+              <ul class="roles">
+                @for (r of roles; track r.title) {
+                  <li>
+                    <b>{{ r.title }}</b>
+                    @if (r.focus) {
+                      · {{ r.focus }}
+                    }
+                    @if (r.promoted) {
+                      <span class="tagx promo">↑ Promoted</span>
+                    }
+                    <p>{{ r.text }}</p>
+                  </li>
+                }
+              </ul>
+            } @else {
+              <p class="role">{{ e.role }}</p>
+              <p>{{ e.text }}</p>
+            }
+          </li>
+        }
+      </ul>
+    </article>
+
+    <!-- ================= 4.5+ years + Serotask preview ================= -->
+    <article class="card c5 stat" [appReveal]="120">
+      <div>
+        <p class="big"><span [appCountUp]="4.5"></span><small>+</small></p>
+      </div>
+
+      <div>
+        <p><strong>Years</strong> building banking &amp; fintech apps.</p>
+        <ul class="chips">
+          <li>Angular</li>
+          <li>Java / Spring Boot</li>
+          <li>REST APIs</li>
+        </ul>
+      </div>
+
+      <div class="sero" role="group" aria-label="Serotask — all-in-one SaaS platform">
+        <div class="sero__h">
+          <b>Serotask <small>All-in-One SaaS</small></b>
+          <span class="period live">{{ '2026-02' | period }}</span>
+        </div>
+
+        <ul class="tiles">
+          <li class="tile tile--ai" [style.--c]="ai.color">
+            <div class="tile__row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                @for (p of ai.icon; track $index) {
+                  <path [attr.d]="p.d" />
+                }
+              </svg>
+              <span>{{ ai.title }}</span>
+            </div>
+            <p class="type" aria-hidden="true"><span>{{ ai.prompt }}</span><i class="caret"></i></p>
+            <div class="gen" aria-hidden="true"><i></i><i></i></div>
+          </li>
+
+          @for (t of tiles; track t.title) {
+            <li class="tile" [style.--c]="t.color">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                @for (p of t.icon; track $index) {
+                  <path [attr.d]="p.d" />
+                }
+              </svg>
+              <span>{{ t.title }}</span>
+              @if (t.bars) {
+                <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+              }
+            </li>
+          }
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>

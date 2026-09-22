@@ -1,0 +1,32 @@
+<section id="about" class="wrap sec" aria-labelledby="ab-h">
+  <div class="sec__h" appReveal>
+    <div><p class="eyebrow"><b>04</b>About</p></div>
+  </div>
+
+  <article class="card hi about" appReveal>
+    <div class="about__t">
+      <h3 id="ab-h">I don't just write code. <em>I build products.</em></h3>
+      <p class="about__p">
+        Software engineer with 4.5+ years building banking &amp; fintech applications with Angular, Java and Spring Boot.
+        Currently at <b>Vastika Technologies</b> — and building <b>KudoEngineer</b>, my own developer platform.
+      </p>
+    </div>
+
+    <dl class="stats">
+      @for (s of stats; track s.label) {
+        <div>
+          <dt>{{ s.label }}</dt>
+          <dd>{{ s.value }}</dd>
+        </div>
+      }
+    </dl>
+
+    <div class="about__ph">
+      <img src="assets/images/satendra.webp" alt="Satendra Rajput" width="900" height="916" loading="lazy" />
+      <p class="badge ab1"><i>V</i>Vastika Technologies <em>Current</em></p>
+      <p class="badge ab2">
+        <img class="klogo klogo--badge" src="assets/images/kudoengineer-logo.png" alt="" width="26" height="26" />KudoEngineer <em>Personal</em>
+      </p>
+    </div>
+  </article>
+</section>

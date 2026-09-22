@@ -1,0 +1,36 @@
+<section id="skills" class="wrap sec" aria-labelledby="sk-h">
+  <div class="sec__h" appReveal>
+    <div>
+      <p class="eyebrow"><b>02</b>Tech stack</p>
+      <h2 id="sk-h" class="h2">My toolbox.</h2>
+      <p class="roleline">
+        Software Engineer
+        <span class="rp" style="--c: #dd0031">Angular</span>+<span class="rp" style="--c: #f59e0b">Java</span>+<span class="rp rp--learn" style="--c: #a855f7">AI Engineer <em>learning</em></span>
+      </p>
+    </div>
+  </div>
+
+  <article class="card" appReveal>
+    <div class="groups">
+      @for (group of groups; track group.title) {
+        <div class="group">
+          <h4>{{ group.title }}</h4>
+          <ul class="chips lg">
+            @for (item of group.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+
+    <div class="learning">
+      <p class="learning__l"><i class="ld" aria-hidden="true"></i>Currently learning</p>
+      <ul class="chips lg learn">
+        @for (item of learning; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </div>
+  </article>
+</section>

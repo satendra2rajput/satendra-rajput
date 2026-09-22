@@ -1,0 +1,15 @@
+/* SECTIONS */
+.sec{padding-top:clamp(4rem,10vh,7rem)}
+.sec__h{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.75rem;flex-wrap:wrap}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:.75rem}
+.eyebrow b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:.72rem}
+.h2{font-size:clamp(2.1rem,4.6vw,3.8rem);font-weight:800;line-height:1.02}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:1.25rem}
+.card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.4rem,3vw,2.3rem);box-shadow:var(--shadow);transition:transform .6s var(--ease),box-shadow .6s var(--ease),border-color .3s,opacity .9s var(--ease) var(--d,0ms)}
+.card.rv{transition:opacity .9s var(--ease) var(--d,0ms),transform .9s var(--ease) var(--d,0ms),box-shadow .6s var(--ease)}
+.card::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 11%,transparent),transparent 62%)}
+.card:hover::after{opacity:1}
+.card.on:hover{transform:translateY(-4px);transition-delay:0s}
+.card:not(.dark):not(.hi):not(.blue):hover{border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.c7{grid-column:span 7}.c5{grid-column:span 5}.c8{grid-column:span 8}.c4{grid-column:span 4}.c12{grid-column:span 12}
+.card h3{font-size:1.5rem;font-weight:800;margin-bottom:1.4rem}

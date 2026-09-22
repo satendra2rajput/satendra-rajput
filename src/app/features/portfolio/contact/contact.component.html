@@ -1,0 +1,25 @@
+<section id="contact" class="wrap sec" aria-labelledby="ct-h">
+  <article class="card blue" appReveal>
+    <span class="orb" aria-hidden="true"></span>
+    <p class="eyebrow"><b>05</b>Contact</p>
+    <h3 id="ct-h">Let's build<br />something.</h3>
+    <p class="who"><b>{{ profile.name }}</b> · Software Engineer</p>
+
+    <div class="cta">
+      <a class="pill" [href]="profile.links.github" target="_blank" rel="noopener">
+        GitHub
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+      </a>
+      <a class="pill" [href]="profile.links.linkedin" target="_blank" rel="noopener">
+        LinkedIn
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+      </a>
+      <a class="pill pill--ghost" [href]="profile.links.resume" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </article>
+
+  <footer class="foot">
+    <p>© {{ year }} {{ profile.name }}</p>
+    <p>Built with Angular &amp; SCSS</p>
+  </footer>
+</section>

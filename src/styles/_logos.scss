@@ -1,0 +1,8 @@
+/* Logos are real <img> files in src/assets/images */
+.klogo{display:inline-block;flex:none;width:var(--s,28px);height:var(--s,28px);object-fit:contain}
+.klogo--tile{border-radius:10px;background:#fff;border:1px solid var(--line);box-shadow:0 4px 12px -6px rgb(0 0 0 / .25)}
+.klogo--lg{--s:64px;filter:drop-shadow(0 10px 18px rgb(43 89 255 / .45))}
+.klogo--h4{--s:34px;margin-right:.6rem;vertical-align:-10px}
+.klogo--h3{--s:36px;margin-right:.6rem;vertical-align:-9px}
+.klogo--badge{--s:26px}
+.kudo__brand{display:flex;align-items:center;gap:1rem}

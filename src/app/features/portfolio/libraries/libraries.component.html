@@ -1,0 +1,108 @@
+<!-- ============ header: title, package-manager switch, copy-all ============ -->
+<div class="subh c12 libhead" appReveal>
+  <div>
+    <p class="eyebrow"><b>02</b>Open source</p>
+    <h3>
+      <img class="klogo klogo--h3" src="assets/images/kudoengineer-logo.png" alt="" width="36" height="36" />Angular libraries
+    </h3>
+    <span>
+      {{ libs.length }} packages published on npm under
+      <a class="ulink" [href]="npmProfile" target="_blank" rel="noopener">&#64;kudoengineer</a>
+    </span>
+  </div>
+
+  <div class="libctl">
+    <div class="seg" role="group" aria-label="Package manager">
+      @for (m of pm.managers; track m) {
+        <button type="button" [class.on]="pm.manager() === m" [attr.aria-pressed]="pm.manager() === m" (click)="pm.manager.set(m)">{{ m }}</button>
+      }
+    </div>
+    <button type="button" class="pill pill--ghost copyall" (click)="copyAll()">
+      @switch (allState()) {
+        @case ('copied') {
+          Copied!
+        }
+        @case ('failed') {
+          Copy failed
+        }
+        @default {
+          Copy all {{ libs.length }} installs
+        }
+      }
+    </button>
+  </div>
+</div>
+
+<!-- ============================== slider ============================== -->
+<div class="c12 slider" appReveal role="region" aria-roledescription="carousel" aria-label="Angular libraries">
+  <div
+    #track
+    class="track"
+    tabindex="0"
+    aria-label="Library cards — use the arrow buttons, arrow keys or swipe"
+    (scroll)="onScroll()"
+    (keydown.arrowright)="onKey(1, $event)"
+    (keydown.arrowleft)="onKey(-1, $event)"
+    (pointerdown)="onPointerDown($event)"
+  >
+    @for (lib of libs; track lib.name; let i = $index) {
+      <article class="card lib slide" role="group" aria-roledescription="slide" [attr.aria-label]="i + 1 + ' of ' + libs.length" [style.--c]="lib.color">
+        <div class="lib__top">
+          <span class="lib__ico" [class.lib__ico--loader]="lib.name === 'loader'">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              @for (p of lib.icon; track $index) {
+                <path [attr.d]="p.d" [attr.fill]="p.fill ? 'currentColor' : null" />
+              }
+            </svg>
+          </span>
+          <span class="lib__meta">
+            <span class="ver">v{{ lib.version }}</span>
+            <a class="npm" [href]="'https://www.npmjs.com/package/' + scope + lib.name" target="_blank" rel="noopener" [attr.aria-label]="scope + lib.name + ' on npm (opens in a new tab)'">
+              npm
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+            </a>
+          </span>
+        </div>
+
+        <h4><span>{{ scope }}</span>{{ lib.name }}</h4>
+        <p>{{ lib.description }}</p>
+
+        <ul class="chips lib__tags">
+          @for (tag of lib.tags; track tag) {
+            <li>{{ tag }}</li>
+          }
+        </ul>
+
+        <div class="cmd">
+          <code><i aria-hidden="true">$</i><span class="m">{{ pm.verb() }}</span> <span class="p">{{ scope }}{{ lib.name }}</span></code>
+          <button
+            class="copy"
+            type="button"
+            [class.copied]="copied() === lib.name"
+            [attr.aria-label]="'Copy install command for ' + scope + lib.name"
+            (click)="copy(lib.name)"
+          >
+            <svg class="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" /><path d="M5 15V6a2 2 0 0 1 2-2h9" /></svg>
+            <svg class="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>
+            <span class="tip" aria-hidden="true">Copied</span>
+          </button>
+        </div>
+      </article>
+    }
+  </div>
+
+  <div class="slider__bar">
+    <p class="count" aria-live="polite"><b>{{ rangeLabel() }}</b> of <span>{{ libs.length }}</span> libraries</p>
+    <div class="sprog" aria-hidden="true"><span [style.width.%]="progress()"></span></div>
+    <div class="arrows">
+      <button type="button" class="arrow" aria-label="Previous libraries" [disabled]="atStart()" (click)="go(-1)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+      </button>
+      <button type="button" class="arrow" aria-label="Next libraries" [disabled]="atEnd()" (click)="go(1)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<p class="sr-only" aria-live="polite">{{ live() }}</p>
