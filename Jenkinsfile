@@ -30,87 +30,74 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying portfolio...'
+    stage('Deploy') {
+    steps {
+        echo 'Deploying portfolio...'
 
-                sh '''
-                    set -e
+        sh '''
+            set -e
 
-                    DEPLOY_DIR="/var/www/satendra2rajput"
-                    BUILD_DIR="dist/satendra-portfolio"
+            DEPLOY_DIR="/var/www/satendra2rajput"
+            BUILD_DIR="dist/satendra-portfolio"
 
-                    echo "======================================"
-                    echo "Starting Portfolio Deployment"
-                    echo "======================================"
+            echo "======================================"
+            echo "Starting Portfolio Deployment"
+            echo "======================================"
 
-                    echo "Build directory: $BUILD_DIR"
-                    echo "Deploy directory: $DEPLOY_DIR"
+            if [ ! -d "$BUILD_DIR" ]; then
+                echo "ERROR: Build directory not found!"
+                exit 1
+            fi
 
-                    echo "Checking build directory..."
+            echo "Cleaning old deployment..."
 
-                    if [ ! -d "$BUILD_DIR" ]; then
-                        echo "ERROR: Build directory not found!"
-                        echo "Expected: $BUILD_DIR"
-                        exit 1
-                    fi
+            rm -rf "$DEPLOY_DIR/browser"
+            rm -f "$DEPLOY_DIR/3rdpartylicenses.txt"
+            rm -f "$DEPLOY_DIR/prerendered-routes.json"
 
-                    echo "Build directory found."
+            echo "Copying Angular build..."
 
-                    echo "Cleaning old deployment..."
+            cp -r "$BUILD_DIR/browser" "$DEPLOY_DIR/"
+            cp "$BUILD_DIR/3rdpartylicenses.txt" "$DEPLOY_DIR/"
+            cp "$BUILD_DIR/prerendered-routes.json" "$DEPLOY_DIR/"
 
-                    rm -rf "${DEPLOY_DIR:?}"/*
+            echo "Setting ownership..."
 
-                    echo "Copying Angular build..."
+            chown -R jenkins:jenkins "$DEPLOY_DIR/browser"
+            chown jenkins:jenkins "$DEPLOY_DIR/3rdpartylicenses.txt"
+            chown jenkins:jenkins "$DEPLOY_DIR/prerendered-routes.json"
 
-                    cp -r "$BUILD_DIR"/* "$DEPLOY_DIR/"
+            echo "Deployment completed successfully."
+        '''
+    }
+}
 
-                    echo "Setting ownership..."
+      stage('Verify Deployment') {
+    steps {
+        sh '''
+            set -e
 
-                    chown -R jenkins:jenkins "$DEPLOY_DIR"
+            echo "======================================"
+            echo "Verifying Portfolio"
+            echo "======================================"
 
-                    echo "Deployment completed successfully."
-                '''
-            }
-        }
+            ls -lah /var/www/satendra2rajput
+            ls -lah /var/www/satendra2rajput/browser
 
-        stage('Verify Deployment') {
-            steps {
-                echo 'Verifying deployment...'
+            if [ ! -f "/var/www/satendra2rajput/browser/index.html" ]; then
+                echo "ERROR: Angular index.html not found!"
+                exit 1
+            fi
 
-                sh '''
-                    set -e
+            if [ ! -d "/var/www/satendra2rajput/browser/assets" ]; then
+                echo "WARNING: assets directory not found."
+            fi
 
-                    echo "======================================"
-                    echo "Verifying Portfolio"
-                    echo "======================================"
-
-                    echo "Deployed files:"
-                    ls -lah /var/www/satendra2rajput
-
-                    echo "Checking index.html..."
-
-                    if [ ! -f "/var/www/satendra2rajput/index.html" ]; then
-                        echo "ERROR: index.html not found!"
-                        exit 1
-                    fi
-
-                    echo "index.html found."
-
-                    echo "Checking Angular assets..."
-
-                    if [ ! -d "/var/www/satendra2rajput/assets" ]; then
-                        echo "WARNING: assets directory not found."
-                    else
-                        echo "assets directory found."
-                    fi
-
-                    echo "======================================"
-                    echo "Deployment verification successful."
-                    echo "======================================"
-                '''
-            }
-        }
+            echo "index.html found."
+            echo "Deployment verification successful."
+        '''
+    }
+}
     }
 
     post {
