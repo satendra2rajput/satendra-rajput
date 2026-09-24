@@ -1,14 +1,86 @@
 /* contact */
-.blue{background:#2b59ff;color:#fff;border-color:transparent;--line:rgb(255 255 255 / .28);padding:clamp(2rem,5vw,4rem)}
-.blue h3{font-size:clamp(2.8rem,8.5vw,7.5rem);line-height:.95;margin:0;letter-spacing:-.05em}
-.blue .who{margin-top:1.5rem;font-size:1.1rem;opacity:.85}.blue .who b{font-weight:600;opacity:1}
-.blue .cta{margin-top:2rem}
-.blue .pill{background:#fff;color:#0e0e10}.blue .pill:hover{background:var(--hi);color:#0e0e10}
-.blue .pill--ghost{background:transparent;color:#fff;border-color:#fff}.blue .pill--ghost:hover{background:#fff;color:#2b59ff}
-.blue .orb{position:absolute;right:-8%;bottom:-40%;width:min(60%,560px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgb(255 255 255 / .3),rgb(255 255 255 / .04) 60%);animation:bob 9s ease-in-out infinite}
-.blue>*:not(.orb){position:relative;z-index:1}
-.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem 2rem;padding:2rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+.blue {
+  background: #2b59ff;
+  color: #fff;
+  border-color: transparent;
+  --line: rgb(255 255 255 / 0.28);
+  padding: clamp(2rem, 5vw, 4rem);
+}
+.blue h3 {
+  font-size: clamp(2.8rem, 8.5vw, 7.5rem);
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -0.05em;
+}
+.blue .who {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+.blue .who b {
+  font-weight: 600;
+  opacity: 1;
+}
+.blue .cta {
+  margin-top: 2rem;
+}
+.blue .pill {
+  background: #fff;
+  color: #0e0e10;
+}
+.blue .pill:hover {
+  background: var(--hi);
+  color: #0e0e10;
+}
+.blue .pill--ghost {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+.blue .pill--ghost:hover {
+  background: #fff;
+  color: #2b59ff;
+}
+.blue .orb {
+  position: absolute;
+  right: -8%;
+  bottom: -40%;
+  width: min(60%, 560px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgb(255 255 255 / 0.3),
+    rgb(255 255 255 / 0.04) 60%
+  );
+  animation: bob 9s ease-in-out infinite;
+}
+.blue > *:not(.orb) {
+  position: relative;
+  z-index: 1;
+}
+.foot {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding: 2rem 0 2.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
 
+.blue .eyebrow {
+  color: rgb(255 255 255 / 0.8);
+}
+.blue .eyebrow b {
+  background: #fff;
+  color: #2b59ff;
+}
 
-.blue .eyebrow{color:rgb(255 255 255 / .8)}
-.blue .eyebrow b{background:#fff;color:#2b59ff}
+.blue .card__img {
+  position: absolute;
+  bottom: -5px;
+  right: -3px;
+  width: 350px;
+  animation-delay: 0.8s;
+}

@@ -67,7 +67,7 @@ export const TIMELINE: TimelineEntry[] = [
     kind: 'Company',
     logo: 'assets/images/vastika-logo.png',
     tile: true,
-    from: '2026-02',
+    from: '2025-12',
     role: 'Angular + Java (Spring Boot)',
     text: 'Axis Bank Dealer Journey — onboarding flow, Group Founder and entity management, dealer registration and verification.',
   },
@@ -77,16 +77,16 @@ export const TIMELINE: TimelineEntry[] = [
     logo: 'assets/images/redmil-logo.png',
     tile: true,
     from: '2022-04',
-    to: '2025-08',
+    to: '2025-11',
     roles: [
       {
-        title: 'Software Engineer',
+        title: 'Software Engineer (May 2024 - Nov 2025)',
         focus: 'Angular + Java',
         promoted: true,
         text: 'AePS / DMT fintech platform — payments, recharges, bill pay and loan management with Java and Angular Material.',
       },
       {
-        title: 'Angular Developer',
+        title: 'Angular Developer (Apr 2022 – Apr 2024)',
         text: "Admin Portal, HDFC Bank loan applications via Jan Samarth and Eazycool's PPF project — Angular, Angular Material and MEAN stack.",
       },
     ],
@@ -168,7 +168,15 @@ export const KUDO = {
   period: '01 · Jul 2026 – Present',
   kind: 'Developer Learning & Career Platform',
   text: 'Built to help software engineers learn, practice and prepare for real-world development and technical interviews.',
-  tags: ['Angular', 'Spring Boot', 'MySQL', 'SEO', 'Open Source'],
+  tags: [
+    'Angular',
+    'Java Spring Boot',
+    'MySQL',
+    'SEO',
+    'Open Source',
+    'Developer Learning',
+    'Career Platform',
+  ],
 };
 
 /* -------------------------- Angular libraries (npm) ------------------------ */
@@ -292,8 +300,8 @@ export const PROJECTS: Project[] = [
   {
     span: 5,
     delay: 100,
-    from: '2026-02',
-    client: 'SaaS',
+    from: '2027-01',
+    client: 'SaaS Coming Soon',
     title: 'Serotask — All-in-One SaaS Platform',
     text: 'AI writing tools, PDF solutions, SEO utilities, image tools and smart online tools that simplify everyday digital work.',
     tags: ['AI tools', 'PDF', 'SEO', 'Image tools'],
@@ -301,6 +309,7 @@ export const PROJECTS: Project[] = [
   {
     span: 5,
     from: '2025-12',
+    to: '2026-01',
     client: 'ADCB Bank',
     title: 'Loan Origination System — Borrower Journey',
     text: 'Stepper-based flow for loan application, document upload, validation and status tracking — from initiation to submission, with API error handling.',
@@ -322,7 +331,7 @@ export const PROJECTS: Project[] = [
     to: '2024-08',
     title: 'Poker9Club',
     text: 'Online poker platform — front-end development.',
-    tags: ['TypeScript', 'Angular Material'],
+    tags: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Angular', 'Angular Material'],
   },
   {
     span: 4,
@@ -332,7 +341,7 @@ export const PROJECTS: Project[] = [
     client: 'Redmil Business Mall',
     title: 'Admin Portal',
     text: 'Admin portal for Redmil Business Mall.',
-    tags: ['Angular', 'Angular Material'],
+    tags: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Angular', 'Angular Material'],
   },
   {
     span: 4,
@@ -342,7 +351,7 @@ export const PROJECTS: Project[] = [
     client: 'Redmil Business Mall',
     title: 'Loan Applications for HDFC Bank via Jan Samarth Portal',
     text: 'Loan applications referred to HDFC Bank through the Jan Samarth portal.',
-    tags: ['TypeScript', 'Angular Material'],
+    tags: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Angular', 'Angular Material'],
   },
   {
     span: 12,
@@ -352,7 +361,7 @@ export const PROJECTS: Project[] = [
     client: 'Redmil Business Mall',
     title: 'Paint Protection Film (PPF) — Eazycool',
     text: 'Built for Eazycool, a Singapore-based company offering paint protection film, solar film, window tinting and bike frame protection film for vehicles, homes and offices.',
-    tags: ['MEAN Stack', 'Angular Material'],
+    tags: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Angular', 'Angular Material'],
   },
 ];
 
@@ -360,7 +369,7 @@ export const PROJECTS: Project[] = [
 export const ABOUT_STATS: StatItem[] = [
   { label: 'Years Experience', value: '4.5+' },
   { label: 'Primary Expertise', value: 'Angular' },
-  { label: 'Backend', value: 'Java' },
+  { label: 'Backend', value: 'Java Spring Boot' },
   { label: 'Product', value: 'KudoEngineer' },
   { label: 'Builder', value: 'Open Source' },
 ];
