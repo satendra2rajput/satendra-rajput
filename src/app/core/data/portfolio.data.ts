@@ -37,7 +37,7 @@ export const MARQUEE_ITEMS = [
   'TypeScript',
   'Java',
   'Spring Boot',
-  'MySQL',
+  'PostgreSQL',
   'RxJS',
   'System Design',
   'REST APIs',
@@ -87,7 +87,7 @@ export const TIMELINE: TimelineEntry[] = [
       },
       {
         title: 'Angular Developer (Apr 2022 – Apr 2024)',
-        text: "Admin Portal, HDFC Bank loan applications via Jan Samarth and Eazycool's PPF project — Angular, Angular Material and MEAN stack.",
+        text: "Admin Portal, HDFC Bank loan applications via Jan Samarth and Eazycool's PPF project — Angular, Angular Material and TypeScript. ",
       },
     ],
   },
@@ -145,7 +145,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
     title: 'Backend',
     items: ['Java', 'Spring Boot', 'REST API', 'Spring Security', 'JWT', 'System Design', 'DSA'],
   },
-  { title: 'Database', items: ['MySQL', 'JPA', 'Hibernate'] },
+  { title: 'Database', items: ['PostgreSQL', 'JPA', 'Hibernate'] },
   {
     title: 'Tools',
     items: ['Git', 'GitHub', 'Docker', 'Linux', 'Nginx', 'Jenkins'],
@@ -171,7 +171,7 @@ export const KUDO = {
   tags: [
     'Angular',
     'Java Spring Boot',
-    'MySQL',
+    'PostgreSQL',
     'SEO',
     'Open Source',
     'Developer Learning',
