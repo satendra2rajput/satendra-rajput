@@ -20,8 +20,8 @@ export const PROFILE = {
     github: 'https://github.com/satendra2rajput',
     linkedin: 'https://www.linkedin.com/in/satendra2rajput/',
     resume: '/assets/Satendra_Resume.docx.pdf',
-    npm: 'https://www.npmjs.com/~kudoengineer',
-    kudoengineer: 'https://kudoengineer.com',
+    npm: 'https://www.npmjs.com/~satendra2rajput',
+    kudoengineer: 'https://serotask.com',
   },
 };
 
@@ -54,9 +54,9 @@ export const MARQUEE_ITEMS = [
 /* Newest first. Entries without `to` show "Present" and their duration keeps growing automatically. */
 export const TIMELINE: TimelineEntry[] = [
   {
-    org: 'KudoEngineer',
+    org: 'SeroTask',
     kind: 'Personal',
-    logo: 'assets/images/kudoengineer-logo.png',
+    logo: 'assets/images/serotask-logo.png',
     tile: false,
     from: '2026-07',
     role: 'Creator · Developer learning & career platform',
@@ -163,9 +163,9 @@ export const LEARNING = [
   'Gemini',
 ];
 
-/* ------------------------------ KudoEngineer ------------------------------- */
+/* ------------------------------ SeroTask ------------------------------- */
 export const KUDO = {
-  period: '01 · Jul 2026 – Present',
+  period: '01 · Jan 2021 – Present',
   kind: 'Developer Learning & Career Platform',
   text: 'Built to help software engineers learn, practice and prepare for real-world development and technical interviews.',
   tags: [
@@ -180,7 +180,7 @@ export const KUDO = {
 };
 
 /* -------------------------- Angular libraries (npm) ------------------------ */
-export const NPM_SCOPE = '@kudoengineer/';
+export const NPM_SCOPE = '@satendra2rajput';
 
 export const LIBRARIES: Library[] = [
   {
@@ -370,6 +370,6 @@ export const ABOUT_STATS: StatItem[] = [
   { label: 'Years Experience', value: '4.5+' },
   { label: 'Primary Expertise', value: 'Angular' },
   { label: 'Backend', value: 'Java Spring Boot' },
-  { label: 'Product', value: 'KudoEngineer' },
+  { label: 'Product', value: 'SeroTask' },
   { label: 'Builder', value: 'Open Source' },
 ];
