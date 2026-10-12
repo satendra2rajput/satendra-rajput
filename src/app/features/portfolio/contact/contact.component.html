@@ -20,13 +20,20 @@
           <path d="M7 17 17 7M8 7h9v9" />
         </svg>
       </a>
+      <a class="pill" [href]="profile.links.youtube" target="_blank" rel="noopener">
+        Youtube
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          aria-hidden="true">
+          <path d="M7 17 17 7M8 7h9v9" />
+        </svg>
+      </a>
       <a class="pill pill--ghost" [href]="profile.links.resume" target="_blank" rel="noopener">Resume</a>
     </div>
     <!-- <img class="card__img ab1" src="/assets/images/sate-1.png" alt="" aria-hidden="true" /> -->
   </article>
 
   <footer class="foot">
-    <p>© {{ year }} {{ profile.name }}</p>
-    <p>Built with Angular &amp; SCSS</p>
+    <p>&#64; {{ year }} {{ profile.name }} &amp; Senior Software Engineer</p>
+    <p>4.5+ years &amp; satendracaria&#64;gmail.com</p>
   </footer>
 </section>

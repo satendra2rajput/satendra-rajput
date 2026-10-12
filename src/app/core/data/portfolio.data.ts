@@ -18,6 +18,7 @@ export const PROFILE = {
   links: {
     // TODO: apne real links daalo
     github: 'https://github.com/satendra2rajput',
+    youtube: 'https://www.youtube.com/@satendra2rajput',
     linkedin: 'https://www.linkedin.com/in/satendra2rajput/',
     resume: '/assets/Satendra_Resume.docx.pdf',
     npm: 'https://www.npmjs.com/~satendra2rajput',
@@ -53,22 +54,40 @@ export const MARQUEE_ITEMS = [
 /* -------------------------------- Timeline -------------------------------- */
 /* Newest first. Entries without `to` show "Present" and their duration keeps growing automatically. */
 export const TIMELINE: TimelineEntry[] = [
-  {
-    org: 'SeroTask',
-    kind: 'Personal',
-    logo: 'assets/images/serotask-logo.png',
-    tile: false,
-    from: '2026-07',
-    role: 'Creator · Developer learning & career platform',
-    text: 'Built to help software engineers learn, practice and prepare for real-world development and technical interviews — alongside the @kudoengineer Angular libraries.',
-  },
+  // {
+  //   org: 'SeroTask',
+  //   kind: 'Personal',
+  //   logo: 'assets/images/serotask-logo.png',
+  //   tile: false,
+  //   from: '2026-07',
+  //   role: 'Creator · Developer learning & career platform',
+  //   text: 'Serotask is your all-in-one online productivity platform, bringing together powerful PDF, AI, image, video, audio, text, SEO, and developer tools in one place.',
+  // },
   {
     org: 'Vastika Technologies',
     kind: 'Company',
     logo: 'assets/images/vastika-logo.png',
     tile: true,
     from: '2025-12',
-    role: 'Angular + Java (Spring Boot)',
+    roles: [
+      {
+        title: 'Senior Software Engineer (Oct 2026 - Present)',
+        focus: '',
+        promoted: true,
+        text: `
+       - Develop scalable applications using Angular, Java, and Spring Boot.
+- Build dynamic loan workflows and dealer-focused dashboards.
+- Integrate and optimize REST APIs and backend services.
+- Fix bugs and collaborate with teams to improve performance and delivery.`,
+      },
+      {
+        title: 'Software Engineer (Dec 2025 - Sep 2026)',
+        text: `- Developed LOS modules for loan applications, document uploads, and eligibility checks.
+- Built dynamic UI workflows and dealer-focused features.
+- Integrated REST APIs with backend services.
+- Resolved bugs and improved UI performance and usability.`,
+      },
+    ],
     text: 'Axis Bank Dealer Journey — onboarding flow, Group Founder and entity management, dealer registration and verification.',
   },
   {
@@ -81,9 +100,13 @@ export const TIMELINE: TimelineEntry[] = [
     roles: [
       {
         title: 'Software Engineer (May 2024 - Nov 2025)',
-        focus: 'Angular + Java',
+        focus: '',
         promoted: true,
-        text: 'AePS / DMT fintech platform — payments, recharges, bill pay and loan management with Java and Angular Material.',
+        text: `
+        - Developed full-stack applications using Angular 18 and Java Spring Boot.
+- Built fintech modules for AEPS, Micro-ATM, Recharge, and Bill Payments.
+- Implemented JWT-based RBAC and biometric device integration.
+- Developed REST APIs, improving performance and reducing transaction errors by 40%.`,
       },
       {
         title: 'Angular Developer (Apr 2022 – Apr 2024)',
@@ -139,16 +162,27 @@ export const SERO_TILES: SeroTile[] = [
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     title: 'Frontend',
-    items: ['Angular', 'TypeScript', 'JavaScript', 'RxJS', 'SCSS', 'HTML'],
+    items: ['JavaScript', 'Angular', 'TypeScript', 'RxJS', 'SCSS', 'HTML'],
   },
   {
     title: 'Backend',
     items: ['Java', 'Spring Boot', 'REST API', 'Spring Security', 'JWT', 'System Design', 'DSA'],
   },
-  { title: 'Database', items: ['PostgreSQL', 'JPA', 'Hibernate'] },
+  { title: 'Database', items: ['MySQL', 'PostgreSQL', 'JPA', 'Hibernate'] },
   {
     title: 'Tools',
-    items: ['Git', 'GitHub', 'Docker', 'Linux', 'Nginx', 'Jenkins'],
+    items: [
+      'Git',
+      'GitHub',
+      'Docker',
+      'Linux',
+      'Nginx',
+      'VPS',
+      'Jenkins',
+      'VS Code',
+      'IntelliJ',
+      'Postman',
+    ],
   },
 ];
 
@@ -165,22 +199,22 @@ export const LEARNING = [
 
 /* ------------------------------ SeroTask ------------------------------- */
 export const KUDO = {
-  period: '01 · Jan 2021 – Present',
-  kind: 'Developer Learning & Career Platform',
-  text: 'Built to help software engineers learn, practice and prepare for real-world development and technical interviews.',
+  period: '01 · Nov 2026 – Present',
+  kind: 'Serotask All-in-One SaaS',
+  text: 'Serotask is your all-in-one online productivity platform, bringing together powerful PDF, AI, image, video, audio, text, SEO, and developer tools in one place.',
   tags: [
     'Angular',
     'Java Spring Boot',
     'PostgreSQL',
     'SEO',
-    'Open Source',
-    'Developer Learning',
-    'Career Platform',
+    'Serotask',
+    'Productivity ',
+    'PDFTools ',
   ],
 };
 
 /* -------------------------- Angular libraries (npm) ------------------------ */
-export const NPM_SCOPE = '@satendra2rajput';
+export const NPM_SCOPE = ' @satendra2rajput/';
 
 export const LIBRARIES: Library[] = [
   {
@@ -279,6 +313,20 @@ export const LIBRARIES: Library[] = [
     description: 'Modern, type-safe validation utilities for Angular applications.',
     tags: ['Type-safe', 'Validation'],
     icon: [{ d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' }, { d: 'M8 12.5l2.7 2.7L16 9.5' }],
+  },
+  {
+    name: 'forms',
+    version: '1.0.0',
+    color: '#0ea5e9',
+    description:
+      'Production-ready forms library for Angular — reactive forms, template-driven forms, validation, and more.',
+    tags: ['Reactive Forms', 'Template-Driven Forms', 'Validation'],
+
+    icon: [
+      { d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' },
+      { d: 'M3 12h18' },
+      { d: 'M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18' },
+    ],
   },
 ];
 
