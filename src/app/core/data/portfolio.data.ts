@@ -21,7 +21,7 @@ export const PROFILE = {
     youtube: 'https://www.youtube.com/@satendra2rajput',
     linkedin: 'https://www.linkedin.com/in/satendra2rajput/',
     resume: '/assets/Satendra_Resume.docx.pdf',
-    npm: 'https://www.npmjs.com/~satendra2rajput',
+    npm: 'https://www.npmjs.com/~serotask',
     kudoengineer: 'https://serotask.com',
   },
 };
@@ -214,120 +214,120 @@ export const KUDO = {
 };
 
 /* -------------------------- Angular libraries (npm) ------------------------ */
-export const NPM_SCOPE = ' @satendra2rajput/';
+export const NPM_SCOPE = '@serotask/';
 
 export const LIBRARIES: Library[] = [
+  // {
+  //   name: 'toast',
+  //   version: '22.0.4',
+  //   color: '#f59e0b',
+  //   description: 'Modern toast notification library for Angular.',
+  //   tags: ['Notifications'],
+  //   icon: [
+  //     { d: 'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9' },
+  //     { d: 'M10.3 21a1.94 1.94 0 0 0 3.4 0' },
+  //   ],
+  // },
   {
-    name: 'toast',
-    version: '22.0.4',
-    color: '#f59e0b',
-    description: 'Modern toast notification library for Angular.',
-    tags: ['Notifications'],
-    icon: [
-      { d: 'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9' },
-      { d: 'M10.3 21a1.94 1.94 0 0 0 3.4 0' },
-    ],
-  },
-  {
-    name: 'loader',
-    version: '1.0.1',
+    name: 'angular-loader',
+    version: '1.0.0',
     color: '#2b59ff',
     description:
       'Modern, lightweight and customizable loader library with 20 loader types, manual control, HTTP interceptor support, custom colors and overlay options.',
     tags: ['20 loader types', 'HTTP interceptor', 'Overlay'],
     icon: [{ d: 'M21 12a9 9 0 1 1-6.2-8.55' }],
   },
-  {
-    name: 'seo',
-    version: '0.0.1',
-    color: '#22c55e',
-    description: 'Lightweight and customizable SEO service for Angular applications.',
-    tags: ['SEO service', 'Lightweight'],
-    icon: SEARCH_ICON,
-  },
-  {
-    name: 'storage',
-    version: '1.0.1',
-    color: '#8b5cf6',
-    description:
-      'A lightweight, type-safe storage utility with LocalStorage, SessionStorage, TTL, prefix support and SSR safety.',
-    tags: ['LocalStorage', 'SessionStorage', 'TTL', 'SSR safe'],
-    icon: [
-      { d: 'M4 5a8 3 0 1 0 16 0a8 3 0 1 0-16 0' },
-      { d: 'M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5' },
-      { d: 'M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6' },
-    ],
-  },
-  {
-    name: 'modal',
-    version: '1.0.0',
-    color: '#ec4899',
-    description: 'Modern, lightweight and customizable modal dialog library for Angular.',
-    tags: ['Dialogs', 'Customizable'],
-    icon: [
-      {
-        d: 'M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z',
-      },
-      { d: 'M3 9h18' },
-      { d: 'M7 6.5h.01M10 6.5h.01' },
-    ],
-  },
-  {
-    name: 'permission',
-    version: '1.0.0',
-    color: '#ef4444',
-    description:
-      'Lightweight permission and role-based access control library for Angular applications.',
-    tags: ['RBAC', 'Roles'],
-    icon: [{ d: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z' }, { d: 'M9 12l2 2 4-4' }],
-  },
-  {
-    name: 'http',
-    version: '1.0.0',
-    color: '#0ea5e9',
-    description:
-      'Production-ready HTTP client for Angular — base URL, authentication, retry, timeout, cancellation, caching, request deduplication, request IDs, logging and Signals support.',
-    tags: ['Retry', 'Caching', 'Signals', 'Auth'],
-    icon: [
-      { d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' },
-      { d: 'M3 12h18' },
-      { d: 'M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18' },
-    ],
-  },
-  {
-    name: 'theme',
-    version: '1.0.0',
-    color: '#a855f7',
-    description:
-      'Production-ready theme management library for Angular with Light, Dark and System theme support.',
-    tags: ['Light', 'Dark', 'System'],
-    icon: [
-      { d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' },
-      { d: 'M12 3a9 9 0 0 0 0 18z', fill: true },
-    ],
-  },
-  {
-    name: 'validator',
-    version: '0.0.1',
-    color: '#14b8a6',
-    description: 'Modern, type-safe validation utilities for Angular applications.',
-    tags: ['Type-safe', 'Validation'],
-    icon: [{ d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' }, { d: 'M8 12.5l2.7 2.7L16 9.5' }],
-  },
-  {
-    name: 'forms',
-    version: '1.0.0',
-    color: '#0ea5e9',
-    description:
-      'Production-ready forms library for Angular — reactive forms, template-driven forms, validation, and more.',
-    tags: ['Reactive Forms', 'Template-Driven Forms', 'Validation'],
+  // {
+  //   name: 'seo',
+  //   version: '0.0.1',
+  //   color: '#22c55e',
+  //   description: 'Lightweight and customizable SEO service for Angular applications.',
+  //   tags: ['SEO service', 'Lightweight'],
+  //   icon: SEARCH_ICON,
+  // },
+  // {
+  //   name: 'storage',
+  //   version: '1.0.1',
+  //   color: '#8b5cf6',
+  //   description:
+  //     'A lightweight, type-safe storage utility with LocalStorage, SessionStorage, TTL, prefix support and SSR safety.',
+  //   tags: ['LocalStorage', 'SessionStorage', 'TTL', 'SSR safe'],
+  //   icon: [
+  //     { d: 'M4 5a8 3 0 1 0 16 0a8 3 0 1 0-16 0' },
+  //     { d: 'M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5' },
+  //     { d: 'M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6' },
+  //   ],
+  // },
+  // {
+  //   name: 'modal',
+  //   version: '1.0.0',
+  //   color: '#ec4899',
+  //   description: 'Modern, lightweight and customizable modal dialog library for Angular.',
+  //   tags: ['Dialogs', 'Customizable'],
+  //   icon: [
+  //     {
+  //       d: 'M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z',
+  //     },
+  //     { d: 'M3 9h18' },
+  //     { d: 'M7 6.5h.01M10 6.5h.01' },
+  //   ],
+  // },
+  // {
+  //   name: 'permission',
+  //   version: '1.0.0',
+  //   color: '#ef4444',
+  //   description:
+  //     'Lightweight permission and role-based access control library for Angular applications.',
+  //   tags: ['RBAC', 'Roles'],
+  //   icon: [{ d: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z' }, { d: 'M9 12l2 2 4-4' }],
+  // },
+  // {
+  //   name: 'http',
+  //   version: '1.0.0',
+  //   color: '#0ea5e9',
+  //   description:
+  //     'Production-ready HTTP client for Angular — base URL, authentication, retry, timeout, cancellation, caching, request deduplication, request IDs, logging and Signals support.',
+  //   tags: ['Retry', 'Caching', 'Signals', 'Auth'],
+  //   icon: [
+  //     { d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' },
+  //     { d: 'M3 12h18' },
+  //     { d: 'M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18' },
+  //   ],
+  // },
+  // {
+  //   name: 'theme',
+  //   version: '1.0.0',
+  //   color: '#a855f7',
+  //   description:
+  //     'Production-ready theme management library for Angular with Light, Dark and System theme support.',
+  //   tags: ['Light', 'Dark', 'System'],
+  //   icon: [
+  //     { d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' },
+  //     { d: 'M12 3a9 9 0 0 0 0 18z', fill: true },
+  //   ],
+  // },
+  // {
+  //   name: 'validator',
+  //   version: '0.0.1',
+  //   color: '#14b8a6',
+  //   description: 'Modern, type-safe validation utilities for Angular applications.',
+  //   tags: ['Type-safe', 'Validation'],
+  //   icon: [{ d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' }, { d: 'M8 12.5l2.7 2.7L16 9.5' }],
+  // },
+  // {
+  //   name: 'forms',
+  //   version: '1.0.0',
+  //   color: '#0ea5e9',
+  //   description:
+  //     'Production-ready forms library for Angular — reactive forms, template-driven forms, validation, and more.',
+  //   tags: ['Reactive Forms', 'Template-Driven Forms', 'Validation'],
 
-    icon: [
-      { d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' },
-      { d: 'M3 12h18' },
-      { d: 'M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18' },
-    ],
-  },
+  //   icon: [
+  //     { d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' },
+  //     { d: 'M3 12h18' },
+  //     { d: 'M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18' },
+  //   ],
+  // },
 ];
 
 /* ------------------------- Client & product projects ----------------------- */
