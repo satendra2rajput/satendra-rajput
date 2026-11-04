@@ -14,7 +14,8 @@ import { AfterViewInit, Directive, ElementRef, OnDestroy, PLATFORM_ID, computed,
 })
 export class RevealDirective implements AfterViewInit, OnDestroy {
   readonly appReveal = input<number | string>(0);
-  protected readonly delay = computed(() => `${Number(this.appReveal()) || 0}ms`);
+  /** read by the `[style.--d]` host binding above */
+  readonly delay = computed(() => `${Number(this.appReveal()) || 0}ms`);
 
   private readonly el = inject<ElementRef<HTMLElement>>(ElementRef);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));

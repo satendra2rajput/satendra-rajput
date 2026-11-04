@@ -9,33 +9,47 @@ export interface NavLink {
   label: string;
 }
 
+/** One position held at a company. Dates are 'YYYY-MM'; leave `to` out for "Present". */
 export interface TimelineRole {
   title: string;
-  focus?: string;
+  from: string;
+  to?: string;
   promoted?: boolean;
-  text: string;
+  points: string[];
 }
 
-export interface TimelineEntry {
+interface TimelineBase {
   org: string;
   kind: 'Personal' | 'Company';
   logo: string;
   /** logos that ship with a white background sit inside a small white tile */
   tile: boolean;
-  /** 'YYYY-MM' */
-  from: string;
-  /** 'YYYY-MM' — leave out for "Present" */
-  to?: string;
-  role?: string;
-  text?: string;
-  roles?: TimelineRole[];
 }
+
+/**
+ * LinkedIn-style: several positions at one company, newest first.
+ * The company's own period/duration is derived automatically from these.
+ */
+export interface TimelineCompany extends TimelineBase {
+  roles: TimelineRole[];
+}
+
+/** A single position (e.g. a personal project) — no nested roles. `to` omitted = Present. */
+export interface TimelineSingle extends TimelineBase {
+  from: string;
+  to?: string;
+  role: string;
+  text: string;
+}
+
+export type TimelineEntry = TimelineCompany | TimelineSingle;
 
 export interface SeroTile {
   title: string;
+  /** e.g. '40+ tools' — omit for an entry that doesn't have a count (Resume Builder) */
+  count?: string;
   color: string;
   icon: IconPath[];
-  bars?: boolean;
 }
 
 export interface SkillGroup {
@@ -69,4 +83,16 @@ export interface Project {
 export interface StatItem {
   label: string;
   value: string;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  /** 'YYYY-MM-DD' */
+  date: string;
+  readMins: number;
+  tag: string;
+  excerpt: string;
+  /** one string per paragraph */
+  body: string[];
 }

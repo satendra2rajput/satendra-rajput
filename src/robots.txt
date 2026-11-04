@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://satendra2rajput.com/sitemap.xml

@@ -16,6 +16,12 @@ export function formatPeriod(from: string, to?: string): string {
   return `${formatMonth(from)} – ${to ? formatMonth(to) : 'Present'}`;
 }
 
+/** '2026-11-05' -> '5 Nov 2026' — for blog post dates (day-level, unlike the month-only timeline). */
+export function formatFullDate(ymd: string): string {
+  const [y, m, d] = ymd.split('-').map(Number);
+  return `${d} ${MONTHS[m - 1]} ${y}`;
+}
+
 /** Inclusive month count (same way LinkedIn counts): Apr 2022 → Aug 2025 = 41 months. */
 export function monthsBetween(from: string, to?: string): number {
   const a = parse(from);
@@ -31,4 +37,15 @@ export function formatDuration(totalMonths: number): string {
   const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`;
   const parts = [years ? plural(years, 'Year') : '', months ? plural(months, 'Month') : ''].filter(Boolean);
   return parts.join(' ') || '1 Month';
+}
+
+/**
+ * LinkedIn-style company total: earliest role start, and — unless one role is still
+ * running ("Present") — the latest role end. `roles` need not be sorted.
+ */
+export function spanRoles(roles: { from: string; to?: string }[]): { from: string; to?: string } {
+  const from = roles.reduce((min, r) => (r.from < min ? r.from : min), roles[0].from);
+  const stillOpen = roles.some((r) => !r.to);
+  const to = stillOpen ? undefined : roles.reduce((max, r) => (r.to! > max ? r.to! : max), roles[0].to ?? '');
+  return { from, to };
 }

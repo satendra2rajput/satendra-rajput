@@ -19,6 +19,13 @@
   .about__ph{margin:1.5rem auto 0;max-width:340px;width:100%;overflow:hidden;border-radius:1.4rem}
   .about .badge{font-size:.78rem}.about .ab1{bottom:3.4rem}.about .ab2{bottom:.8rem}
   .badge{font-size:.8rem}.seal{width:92px;height:92px}
+  .blue__body{flex-direction:column-reverse;text-align:center}
+  .blue__text{flex-basis:auto}
+  .cta{justify-content:center}
+  .blog-top,.post{padding-top:6.25rem}
+  .blog-grid{grid-template-columns:1fr}
+  .post__nav{grid-template-columns:1fr}
+  .post__nav-link--older{grid-column:1;text-align:left;align-items:flex-start}
 }
 @media (max-width:640px){.slide{flex-basis:86%}.slider__bar{flex-wrap:wrap}.sprog{order:3;flex-basis:100%}.arrows{margin-left:auto}}
 @media (max-width:520px){.tag{font-size:.78rem;padding-right:.8rem}.nav__r .pill{display:none}.b2{top:40%}}

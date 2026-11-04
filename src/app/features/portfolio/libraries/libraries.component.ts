@@ -5,7 +5,6 @@ import {
   Component,
   ElementRef,
   HostListener,
-  NgZone,
   OnDestroy,
   PLATFORM_ID,
   computed,
@@ -19,7 +18,7 @@ import { PackageManagerService } from '../../../core/services/package-manager.se
 import { RevealDirective } from '../../../shared/directives/reveal.directive';
 
 /**
- * The 9 published @satendra2rajput packages:
+ * The 9 published @kudoengineer packages:
  * - slider (arrows, keyboard, mouse-drag, native swipe on touch) with live "1–3 of 9" counter + progress bar
  * - copy-to-clipboard install command per card, plus "copy all"
  * - npm / pnpm / yarn switch (shared via PackageManagerService)
@@ -38,7 +37,6 @@ export class LibrariesComponent implements AfterViewInit, OnDestroy {
   protected readonly pm = inject(PackageManagerService);
 
   private readonly clipboard = inject(ClipboardService);
-  private readonly zone = inject(NgZone);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private readonly trackRef = viewChild.required<ElementRef<HTMLElement>>('track');
 
@@ -54,9 +52,7 @@ export class LibrariesComponent implements AfterViewInit, OnDestroy {
   protected readonly last = signal(3);
   protected readonly atStart = signal(true);
   protected readonly atEnd = signal(false);
-  protected readonly rangeLabel = computed(() =>
-    this.first() === this.last() ? String(this.first()) : `${this.first()}–${this.last()}`,
-  );
+  protected readonly rangeLabel = computed(() => (this.first() === this.last() ? String(this.first()) : `${this.first()}–${this.last()}`));
   protected readonly progress = computed(() => (this.last() / this.libs.length) * 100);
 
   private raf = 0;
@@ -90,9 +86,7 @@ export class LibrariesComponent implements AfterViewInit, OnDestroy {
   protected async copyAll(): Promise<void> {
     const text = this.pm.command(this.libs.map((l) => l.name));
     const ok = await this.clipboard.copy(text);
-    this.live.set(
-      ok ? `Copied install command for all ${this.libs.length} packages` : 'Copy failed',
-    );
+    this.live.set(ok ? `Copied install command for all ${this.libs.length} packages` : 'Copy failed');
     this.allState.set(ok ? 'copied' : 'failed');
     clearTimeout(this.allTimer);
     this.allTimer = window.setTimeout(() => this.allState.set('idle'), 1800);
@@ -118,9 +112,7 @@ export class LibrariesComponent implements AfterViewInit, OnDestroy {
 
   private perView(): number {
     const step = this.step();
-    return step > 0
-      ? Math.max(1, Math.floor((this.track.clientWidth + this.gap()) / step + 0.02))
-      : 1;
+    return step > 0 ? Math.max(1, Math.floor((this.track.clientWidth + this.gap()) / step + 0.02)) : 1;
   }
 
   private behavior(): ScrollBehavior {
@@ -173,10 +165,8 @@ export class LibrariesComponent implements AfterViewInit, OnDestroy {
     this.moved = 0;
     this.startX = event.clientX;
     this.startLeft = this.track.scrollLeft;
-    this.zone.runOutsideAngular(() => {
-      window.addEventListener('pointermove', this.onMove);
-      window.addEventListener('pointerup', this.onUp);
-    });
+    window.addEventListener('pointermove', this.onMove);
+    window.addEventListener('pointerup', this.onUp);
   }
 
   private readonly onMove = (event: PointerEvent): void => {
@@ -197,10 +187,7 @@ export class LibrariesComponent implements AfterViewInit, OnDestroy {
 
     const track = this.track;
     track.classList.remove('drag');
-    track.scrollTo({
-      left: Math.round(track.scrollLeft / this.step()) * this.step(),
-      behavior: this.behavior(),
-    });
+    track.scrollTo({ left: Math.round(track.scrollLeft / this.step()) * this.step(), behavior: this.behavior() });
 
     // swallow the click a drag would otherwise trigger (only for this tick)
     const block = (e: Event): void => {

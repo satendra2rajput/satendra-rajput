@@ -1,5 +1,5 @@
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Injectable, PLATFORM_ID, effect, inject, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, Injectable, PLATFORM_ID, effect, inject, signal } from '@angular/core';
 
 export type ThemeMode = 'light' | 'dark';
 const STORAGE_KEY = 'sr-theme';

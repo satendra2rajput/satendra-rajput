@@ -1,0 +1,40 @@
+/* blog list + single post — both pages are their own route, no hero above them,
+   so they need the same top clearance under the floating nav that .hero uses */
+.blog-top,
+.post{padding-top:7.25rem}
+
+/* ---- list ---- */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.blog-card{padding:0}
+.blog-card__link{display:flex;flex-direction:column;gap:.9rem;height:100%;padding:clamp(1.4rem,3vw,2.3rem);color:inherit}
+.blog-card__meta{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+.blog-card__meta .tagx,
+.post__meta .tagx{margin-left:0}
+.blog-card h2{font-family:var(--head);font-weight:800;font-size:1.3rem;letter-spacing:-.02em;line-height:1.2}
+.blog-card p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.blog-card__more{display:inline-flex;align-items:center;gap:.5rem;margin-top:auto;font-weight:600;font-size:.9rem;color:var(--accent)}
+.blog-card__more svg{transition:transform .3s var(--ease)}
+.blog-card:hover .blog-card__more svg{transform:translateX(4px)}
+
+/* ---- single post ---- */
+.post{max-width:760px}
+.back{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:2rem;font-weight:600;font-size:.9rem;color:var(--muted);transition:color .25s}
+.back:hover{color:var(--ink)}
+.post__meta{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.85rem;color:var(--muted)}
+.post__head h1{font-family:var(--head);font-weight:800;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.03em;line-height:1.08}
+.post__byline{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:1.1rem 0 0;font-size:.92rem;color:var(--muted)}
+.post__byline strong{color:var(--ink);font-weight:600}
+.copylink{display:inline-flex;align-items:center;gap:.45rem;padding:.3rem .8rem;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);font:inherit;font-size:.82rem;font-weight:500;cursor:pointer;transition:border-color .25s,color .25s,background-color .25s}
+.copylink:hover{border-color:var(--accent);color:var(--accent)}
+.copylink.copied{border-color:#22c55e;color:#22c55e;background:color-mix(in srgb,#22c55e 10%,transparent)}
+.post__body{margin-top:2.5rem;display:grid;gap:1.3rem;font-size:1.08rem;line-height:1.75}
+.post__body p:first-child{font-size:1.18rem;color:var(--muted)}
+.post--missing .lead{margin:.75rem 0 1.75rem;color:var(--muted)}
+
+/* newer/older post navigation */
+.post__nav{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--line)}
+.post__nav-link{display:flex;flex-direction:column;gap:.5rem;padding:1.25rem;border:1px solid var(--line);border-radius:18px;color:inherit;transition:border-color .25s,transform .3s var(--ease)}
+.post__nav-link:hover{border-color:var(--accent);transform:translateY(-2px)}
+.post__nav-link--older{grid-column:2;text-align:right;align-items:flex-end}
+.post__nav-label{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.post__nav-title{font-family:var(--head);font-weight:700;font-size:1rem;letter-spacing:-.01em;line-height:1.3}

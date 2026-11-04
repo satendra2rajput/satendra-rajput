@@ -1,36 +1,42 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Satendra Rajput — Software Engineer (Angular + Java)</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description"
-    content="Software Engineer building banking & fintech web apps with Angular, Java and Spring Boot. Currently learning AI engineering. Creator of KudoEngineer.">
+  <meta name="description" content="Software Engineer building banking & fintech web apps with Angular, Java and Spring Boot. Currently learning AI engineering. Creator of Serotask.">
+  <meta name="author" content="Satendra Rajput">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0c0c0e" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://satendra2rajput.com/">
-  <link rel="icon" type="image/png" href="assets/web-app-manifest-512x512.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 
+  <!-- SeoService (core/services/seo.service.ts) overwrites description/og:*/twitter:*/robots/canonical
+       on every route change — these are the first-paint values, read by crawlers that don't run JS. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Satendra Rajput">
   <meta property="og:title" content="Satendra Rajput — Software Engineer (Angular + Java)">
-  <meta property="og:description"
-    content="Banking & fintech web apps with Angular, Java & Spring Boot. Creator of Serotask.">
+  <meta property="og:description" content="Banking & fintech web apps with Angular, Java & Spring Boot. Creator of Serotask.">
   <meta property="og:url" content="https://satendra2rajput.com/">
+  <meta property="og:image" content="https://satendra2rajput.com/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satendra Rajput — Software Engineer (Angular + Java)">
+  <meta name="twitter:description" content="Banking & fintech web apps with Angular, Java & Spring Boot. Creator of Serotask.">
+  <meta name="twitter:image" content="https://satendra2rajput.com/assets/images/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- apply the saved light/dark choice before first paint (no flash) -->
   <script>
-    try { var t = localStorage.getItem('sr-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) { }
+    try { var t = localStorage.getItem('sr-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
   </script>
 
   <script type="application/ld+json">
@@ -42,15 +48,12 @@
     "jobTitle": "Software Engineer",
     "description": "Software engineer building banking and fintech web applications with Angular, Java and Spring Boot.",
     "knowsAbout": ["Angular", "TypeScript", "Java", "Spring Boot", "REST APIs", "MySQL", "RxJS", "System Design"],
-    "owns": { "@type": "WebSite", "name": "KudoEngineer", "url": "https://kudoengineer.com" }
+    "owns": { "@type": "WebSite", "name": "Serotask", "url": "https://serotask.com" }
   }
   </script>
 </head>
-
 <body>
   <app-root></app-root>
-  <noscript>Satendra Rajput — Software Engineer (Angular + Java). Please enable JavaScript to view this
-    portfolio.</noscript>
+  <noscript>Satendra Rajput — Software Engineer (Angular + Java). Please enable JavaScript to view this portfolio.</noscript>
 </body>
-
 </html>

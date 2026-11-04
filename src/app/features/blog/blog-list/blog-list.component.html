@@ -1,0 +1,29 @@
+<main appSpotlight>
+  <section class="wrap sec blog-top" aria-labelledby="blog-h">
+    <div class="sec__h" appReveal>
+      <div>
+        <p class="eyebrow"><b>B</b>Blog</p>
+        <h1 id="blog-h" class="h2">Notes on Angular, Java &amp; building things.</h1>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      @for (p of posts; track p.slug; let i = $index) {
+        <article class="card blog-card" [appReveal]="(i % 3) * 90">
+          <a class="blog-card__link" [routerLink]="['/blog', p.slug]">
+            <div class="blog-card__meta">
+              <span class="tagx">{{ p.tag }}</span>
+              <span>{{ p.date | blogDate }} · {{ p.readMins }} min read</span>
+            </div>
+            <h2>{{ p.title }}</h2>
+            <p>{{ p.excerpt }}</p>
+            <span class="blog-card__more">
+              Read post
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </span>
+          </a>
+        </article>
+      }
+    </div>
+  </section>
+</main>
