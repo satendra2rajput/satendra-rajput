@@ -1,0 +1,26 @@
+/* BUILD-ON-LOAD INTRO — see core/services/page-build.service.ts */
+
+/* hidden until the service has prepared the page (class is set by the inline script in index.html) */
+html.ib-gate main,html.ib-gate .nav{visibility:hidden}
+
+/* boxes / images that are waiting for a cursor to build them */
+.ib-h{clip-path:inset(50%)!important;pointer-events:none!important}
+
+/* characters that have not been typed yet: layout stays put, ink is just not there yet */
+::highlight(ib-untyped){color:transparent;-webkit-text-fill-color:transparent;text-shadow:none;text-decoration-color:transparent;background-color:transparent}
+
+/* cursors */
+.ib-layer{position:fixed;inset:0;z-index:2147483000;pointer-events:none;overflow:hidden}
+.ib-cur{position:absolute;left:0;top:0;opacity:0;transition:opacity .35s;will-change:transform;--h:20px}
+.ib-cur.on{opacity:1}
+.ib-bar{position:absolute;left:-1px;top:0;width:2px;height:var(--h);border-radius:1px;background:var(--c);opacity:0;transition:opacity .15s}
+.ib-cur.txt .ib-bar{opacity:1}
+.ib-ptr{position:absolute;left:-2px;top:-1px;width:16px;height:20px;opacity:0;transition:opacity .15s;filter:drop-shadow(0 1px 2px rgb(0 0 0 / .35))}
+.ib-cur.ptr .ib-ptr{opacity:1}
+.ib-flag{position:absolute;left:0;top:0;padding:.1rem .5rem;border-radius:7px;background:var(--c);color:#fff;font:600 11px/1.55 var(--body);letter-spacing:.01em;white-space:nowrap;box-shadow:0 4px 12px -4px rgb(0 0 0 / .35);transition:transform .2s var(--ease)}
+.ib-cur.txt .ib-flag{transform:translate(-1px,calc(-100% - 2px));border-bottom-left-radius:0}
+.ib-cur.ptr .ib-flag{transform:translate(12px,17px);border-top-left-radius:0}
+
+.ib-skip{position:absolute;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));pointer-events:auto;padding:.5rem .95rem;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font:600 .8rem/1 var(--body);cursor:pointer;box-shadow:var(--shadow);transition:opacity .4s,transform .4s var(--ease)}
+.ib-skip:hover{background:var(--ink);color:var(--bg)}
+.ib-skip.gone{opacity:0;transform:translateY(8px);pointer-events:none}

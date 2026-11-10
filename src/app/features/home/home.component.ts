@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, afterNextRender, inject } from '@angular/core';
+import { PageBuildService } from '../../core/services/page-build.service';
 import { SeoService } from '../../core/services/seo.service';
 import { SpotlightDirective } from '../../shared/directives/spotlight.directive';
 import { MarqueeComponent } from '../../shared/components/marquee/marquee.component';
@@ -36,6 +37,7 @@ import { WorkComponent } from '../portfolio/work/work.component';
 })
 export class HomeComponent {
   private readonly seo = inject(SeoService);
+  private readonly build = inject(PageBuildService);
 
   constructor() {
     // resets the tab/canonical/OG tags back to the site defaults when navigating here from /blog
@@ -46,5 +48,8 @@ export class HomeComponent {
       path: '/',
     });
     this.seo.setJsonLd(null); // a blog post may have left its BlogPosting schema behind
+
+    // first hard load only: cursors build the page live (no-op on later visits / reduced-motion)
+    afterNextRender(() => void this.build.start());
   }
 }
