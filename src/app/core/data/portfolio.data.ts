@@ -1,4 +1,13 @@
-import { BlogPost, Library, NavLink, Project, SeroTile, SkillGroup, StatItem, TimelineEntry } from '../models/portfolio.models';
+import {
+  BlogPost,
+  Library,
+  NavLink,
+  Project,
+  SeroTile,
+  SkillGroup,
+  StatItem,
+  TimelineEntry,
+} from '../models/portfolio.models';
 
 /* ==========================================================================
    ✏️  YAHAN APNA CONTENT EDIT KARO — poori site isi file se chalti hai
@@ -12,11 +21,11 @@ export const PROFILE = {
   years: '4.5+',
   links: {
     // TODO: apne real links daalo
-    github: 'https://github.com/',
-    linkedin: 'https://www.linkedin.com/in/',
+    github: 'https://github.com/satendra2rajput',
+    linkedin: 'https://www.linkedin.com/in/satendra2rajput/',
     resume: 'assets/resume.pdf',
     // the 9 published packages are still under the old npm scope — see the NPM_SCOPE note near LIBRARIES below
-    npm: 'https://www.npmjs.com/~kudoengineer',
+    npm: 'https://www.npmjs.com/~serotask',
     serotask: 'https://serotask.com',
   },
 };
@@ -30,13 +39,29 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const MARQUEE_ITEMS = [
-  'Angular', 'TypeScript', 'Java', 'Spring Boot', 'MySQL', 'RxJS', 'System Design', 'REST APIs', 'JavaScript',
+  'Angular',
+  'TypeScript',
+  'Java',
+  'Spring Boot',
+  'MySQL',
+  'RxJS',
+  'System Design',
+  'REST APIs',
+  'JavaScript',
 ];
 
 /** Chips shown under the "4.5+ years" count — what those years actually cover. */
 export const EXPERIENCE_CHIPS = [
-  'Banking & Fintech', 'AEPS / Aadhaar Pay', 'Recharge', 'Bill Payment', 'Micro-ATM',
-  'Axis Bank LOS', 'npm Packages', 'SaaS Tools', 'VS Code Extensions', 'Open Source',
+  'Banking & Fintech',
+  'AEPS / Aadhaar Pay',
+  'Recharge',
+  'Bill Payment',
+  'Micro-ATM',
+  'Axis Bank LOS',
+  'npm Packages',
+  'SaaS Tools',
+  'VS Code Extensions',
+  'Open Source',
 ];
 
 /* -------------------------------- Timeline -------------------------------- */
@@ -166,12 +191,24 @@ export const SERO_TILES: SeroTile[] = [
 /* -------------------------------- Skills ---------------------------------- */
 export const SKILL_GROUPS: SkillGroup[] = [
   { title: 'Frontend', items: ['Angular', 'TypeScript', 'JavaScript', 'RxJS', 'SCSS', 'HTML'] },
-  { title: 'Backend', items: ['Java', 'Spring Boot', 'REST API', 'Spring Security', 'JWT', 'System Design', 'DSA'] },
+  {
+    title: 'Backend',
+    items: ['Java', 'Spring Boot', 'REST API', 'Spring Security', 'JWT', 'System Design', 'DSA'],
+  },
   { title: 'Database', items: ['MySQL', 'JPA', 'Hibernate'] },
   { title: 'Tools', items: ['Git', 'GitHub', 'Docker', 'Linux', 'Nginx', 'Jenkins'] },
 ];
 
-export const LEARNING = ['Spring AI', 'LLM', 'GenAI', 'LangChain', 'RAG', 'Vector DB', 'OpenAI', 'Gemini'];
+export const LEARNING = [
+  'Spring AI',
+  'LLM',
+  'GenAI',
+  'LangChain',
+  'RAG',
+  'Vector DB',
+  'OpenAI',
+  'Gemini',
+];
 
 /* -------------------------- Serotask (featured project) -------------------- */
 export const SEROTASK_PROJECT = {
@@ -187,70 +224,28 @@ export const SEROTASK_PROJECT = {
    Renaming NPM_SCOPE would point every "npm i" command and npm link at
    packages that don't exist under that name. Publish under @serotask on npm
    first, then switch this constant (and PROFILE.links.npm) over to match. */
-export const NPM_SCOPE = '@kudoengineer/';
+export const NPM_SCOPE = '@serotask/';
 
 export const LIBRARIES: Library[] = [
   {
-    name: 'toast', version: '22.0.4', color: '#f59e0b',
+    name: 'toast',
+    version: '22.0.4',
+    color: '#f59e0b',
     description: 'Modern toast notification library for Angular.',
     tags: ['Notifications'],
-    icon: [{ d: 'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9' }, { d: 'M10.3 21a1.94 1.94 0 0 0 3.4 0' }],
+    icon: [
+      { d: 'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9' },
+      { d: 'M10.3 21a1.94 1.94 0 0 0 3.4 0' },
+    ],
   },
   {
-    name: 'loader', version: '1.0.1', color: '#2b59ff',
-    description: 'Modern, lightweight and customizable loader library with 20 loader types, manual control, HTTP interceptor support, custom colors and overlay options.',
+    name: 'loader',
+    version: '1.0.1',
+    color: '#2b59ff',
+    description:
+      'Modern, lightweight and customizable loader library with 20 loader types, manual control, HTTP interceptor support, custom colors and overlay options.',
     tags: ['20 loader types', 'HTTP interceptor', 'Overlay'],
     icon: [{ d: 'M21 12a9 9 0 1 1-6.2-8.55' }],
-  },
-  {
-    name: 'seo', version: '0.0.1', color: '#22c55e',
-    description: 'Lightweight and customizable SEO service for Angular applications.',
-    tags: ['SEO service', 'Lightweight'],
-    icon: [{ d: 'M5 11a6 6 0 1 0 12 0a6 6 0 1 0-12 0' }, { d: 'M20 20l-4.2-4.2' }],
-  },
-  {
-    name: 'storage', version: '1.0.1', color: '#8b5cf6',
-    description: 'A lightweight, type-safe storage utility with LocalStorage, SessionStorage, TTL, prefix support and SSR safety.',
-    tags: ['LocalStorage', 'SessionStorage', 'TTL', 'SSR safe'],
-    icon: [
-      { d: 'M4 5a8 3 0 1 0 16 0a8 3 0 1 0-16 0' },
-      { d: 'M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5' },
-      { d: 'M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6' },
-    ],
-  },
-  {
-    name: 'modal', version: '1.0.0', color: '#ec4899',
-    description: 'Modern, lightweight and customizable modal dialog library for Angular.',
-    tags: ['Dialogs', 'Customizable'],
-    icon: [
-      { d: 'M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z' },
-      { d: 'M3 9h18' },
-      { d: 'M7 6.5h.01M10 6.5h.01' },
-    ],
-  },
-  {
-    name: 'permission', version: '1.0.0', color: '#ef4444',
-    description: 'Lightweight permission and role-based access control library for Angular applications.',
-    tags: ['RBAC', 'Roles'],
-    icon: [{ d: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z' }, { d: 'M9 12l2 2 4-4' }],
-  },
-  {
-    name: 'http', version: '1.0.0', color: '#0ea5e9',
-    description: 'Production-ready HTTP client for Angular — base URL, authentication, retry, timeout, cancellation, caching, request deduplication, request IDs, logging and Signals support.',
-    tags: ['Retry', 'Caching', 'Signals', 'Auth'],
-    icon: [{ d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' }, { d: 'M3 12h18' }, { d: 'M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18' }],
-  },
-  {
-    name: 'theme', version: '1.0.0', color: '#a855f7',
-    description: 'Production-ready theme management library for Angular with Light, Dark and System theme support.',
-    tags: ['Light', 'Dark', 'System'],
-    icon: [{ d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' }, { d: 'M12 3a9 9 0 0 0 0 18z', fill: true }],
-  },
-  {
-    name: 'validator', version: '0.0.1', color: '#14b8a6',
-    description: 'Modern, type-safe validation utilities for Angular applications.',
-    tags: ['Type-safe', 'Validation'],
-    icon: [{ d: 'M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0' }, { d: 'M8 12.5l2.7 2.7L16 9.5' }],
   },
 ];
 
@@ -258,7 +253,9 @@ export const LIBRARIES: Library[] = [
 /* Newest first. No `to` = still running (green "live" dot). */
 export const PROJECTS: Project[] = [
   {
-    span: 7, from: '2026-02', client: 'Vastika Technologies',
+    span: 7,
+    from: '2026-02',
+    client: 'Vastika Technologies',
     title: 'Axis Bank — Dealer Onboarding & Group Entity Management Platform',
     points: [
       'Dealer Journey module: onboarding flow, Group Founder and Entity management.',
@@ -268,37 +265,58 @@ export const PROJECTS: Project[] = [
     tags: ['Angular', 'Java · Spring Boot', 'Stepper UI', 'Validations'],
   },
   {
-    span: 5, delay: 100, from: '2025-12', client: 'ADCB Bank',
+    span: 5,
+    delay: 100,
+    from: '2025-12',
+    client: 'ADCB Bank',
     title: 'Loan Origination System — Borrower Journey',
     text: 'Stepper-based flow for loan application, document upload, validation and status tracking — from initiation to submission, with API error handling.',
     tags: ['Angular', 'Spring Boot APIs', 'HTML · CSS'],
   },
   {
-    span: 7, delay: 100, from: '2024-09', to: '2025-08', client: 'Redmil Business Mall',
+    span: 7,
+    delay: 100,
+    from: '2024-09',
+    to: '2025-08',
+    client: 'Redmil Business Mall',
     title: 'Fintech Platform — AePS, DMT, Bill & Recharges',
     text: 'A comprehensive fintech platform covering AePS, banking services, digital payments, recharges, loan management, bill payments, insurance and e-commerce integrations — built with a focus on user experience, security and performance.',
     tags: ['Java', 'Angular Material', 'AePS', 'DMT', 'Payments'],
   },
   {
-    span: 4, from: '2024-05', to: '2024-08',
+    span: 4,
+    from: '2024-05',
+    to: '2024-08',
     title: 'Poker9Club',
     text: 'Online poker platform — front-end development.',
     tags: ['TypeScript', 'Angular Material'],
   },
   {
-    span: 4, delay: 100, from: '2022-04', to: '2024-04', client: 'Redmil Business Mall',
+    span: 4,
+    delay: 100,
+    from: '2022-04',
+    to: '2024-04',
+    client: 'Redmil Business Mall',
     title: 'Admin Portal',
     text: 'Admin portal for Redmil Business Mall.',
     tags: ['Angular', 'Angular Material'],
   },
   {
-    span: 4, delay: 200, from: '2022-04', to: '2024-04', client: 'Redmil Business Mall',
+    span: 4,
+    delay: 200,
+    from: '2022-04',
+    to: '2024-04',
+    client: 'Redmil Business Mall',
     title: 'Loan Applications for HDFC Bank via Jan Samarth Portal',
     text: 'Loan applications referred to HDFC Bank through the Jan Samarth portal.',
     tags: ['TypeScript', 'Angular Material'],
   },
   {
-    span: 12, wide: true, from: '2022-04', to: '2024-04', client: 'Redmil Business Mall',
+    span: 12,
+    wide: true,
+    from: '2022-04',
+    to: '2024-04',
+    client: 'Redmil Business Mall',
     title: 'Paint Protection Film (PPF) — Eazycool',
     text: 'Built for Eazycool, a Singapore-based company offering paint protection film, solar film, window tinting and bike frame protection film for vehicles, homes and offices.',
     tags: ['MEAN Stack', 'Angular Material'],
@@ -323,12 +341,13 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2026-11-05',
     readMins: 4,
     tag: 'Serotask',
-    excerpt: 'Why I built Serotask, what it covers today — PDF, image, SEO and developer tools plus a resume builder — and what comes next.',
+    excerpt:
+      'Why I built Serotask, what it covers today — PDF, image, SEO and developer tools plus a resume builder — and what comes next.',
     body: [
-      "Serotask started as a side project to solve a problem I kept running into at work: switching between five different tabs just to convert a PDF, resize an image, or check an SEO tag. The idea was simple — put the tools people reach for most often in one place, with no sign-up friction and no bloated UI.",
+      'Serotask started as a side project to solve a problem I kept running into at work: switching between five different tabs just to convert a PDF, resize an image, or check an SEO tag. The idea was simple — put the tools people reach for most often in one place, with no sign-up friction and no bloated UI.',
       'Today Serotask is organized into five areas: PDF Tools (40+ tools — merge, split, compress, convert and more), Image Tools (50+ tools), SEO Tools (20+ tools), Developer Tools (40+ tools), and a Resume Builder for putting together a professional resume in minutes. That is 150+ tools behind one fast interface, and most of them run entirely in the browser — no upload-and-wait step.',
-      "The roadmap for the next few months is focused on three things: a proper API so these tools can be scripted or embedded, tighter integration between categories (so a PDF tool can hand off straight into an image or SEO tool), and rounding out each category based on which tools people actually use most.",
-      "If you try it and something is missing or broken, that feedback is genuinely useful to me — Serotask is still small enough that one good bug report can change what gets built next.",
+      'The roadmap for the next few months is focused on three things: a proper API so these tools can be scripted or embedded, tighter integration between categories (so a PDF tool can hand off straight into an image or SEO tool), and rounding out each category based on which tools people actually use most.',
+      'If you try it and something is missing or broken, that feedback is genuinely useful to me — Serotask is still small enough that one good bug report can change what gets built next.',
     ],
   },
   {
@@ -337,9 +356,10 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2026-10-02',
     readMins: 6,
     tag: 'Angular',
-    excerpt: 'Toast, loader, modal, storage, theme — nine packages later, here is what actually mattered for adoption and maintenance.',
+    excerpt:
+      'Toast, loader, modal, storage, theme — nine packages later, here is what actually mattered for adoption and maintenance.',
     body: [
-      "Over the last year I published nine small Angular libraries — toast, loader, modal, storage, validator, theme, permission, http and seo — all under one npm scope. None of them are complicated individually, which turned out to be the point.",
+      'Over the last year I published nine small Angular libraries — toast, loader, modal, storage, validator, theme, permission, http and seo — all under one npm scope. None of them are complicated individually, which turned out to be the point.',
       'The biggest lesson: a library that does one thing well with a tiny API gets adopted faster than one that tries to be configurable for every use case. @kudoengineer/loader has 20 loader types and an HTTP interceptor hook, but the default import still works in two lines of code — that balance mattered more than any single feature.',
       'Versioning was the other recurring headache. A few early 0.x releases went out before the API had settled, which meant breaking changes for anyone who adopted early. Since then everything ships behind a changelog and a deprecation window before anything gets removed.',
       'The short version: build the narrowest useful thing first, write the README before the code if you can, and expect maintenance — not the initial release — to be where most of the real work happens.',
@@ -351,7 +371,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2026-09-10',
     readMins: 5,
     tag: 'Career',
-    excerpt: 'The title changed on a Tuesday. The day-to-day work changed gradually, over about a year — here is what that looked like.',
+    excerpt:
+      'The title changed on a Tuesday. The day-to-day work changed gradually, over about a year — here is what that looked like.',
     body: [
       "When the title on my offer letter changed from Angular Developer to Software Engineer, the work didn't change overnight. What changed was the shape of the problems I was handed.",
       'As an Angular Developer, most tickets arrived already scoped: build this screen, wire up this API, fix this validation bug. As a Software Engineer, I started owning the gap between "the business wants dealers to onboard faster" and an actual technical plan — which meant more time in design discussions with the Java/Spring Boot side before a single component got written.',
@@ -365,12 +386,13 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2026-07-18',
     readMins: 7,
     tag: 'Fintech',
-    excerpt: 'Document uploads, conditional steps, and saving partial progress — notes from building loan-application journeys in Angular + Spring Boot.',
+    excerpt:
+      'Document uploads, conditional steps, and saving partial progress — notes from building loan-application journeys in Angular + Spring Boot.',
     body: [
-      "Loan origination journeys look simple on a wireframe — a handful of steps, a progress bar, a submit button — and get complicated fast once you add document uploads, conditional steps, and borrowers who close the tab halfway through.",
+      'Loan origination journeys look simple on a wireframe — a handful of steps, a progress bar, a submit button — and get complicated fast once you add document uploads, conditional steps, and borrowers who close the tab halfway through.',
       'The pattern that worked best was treating each step as its own reactive form, validated independently, with a single service holding the overall application state as a plain object rather than one giant form group. That made it straightforward to let borrowers jump backward to fix something without losing progress on later steps.',
       'Document upload was its own small project: chunked uploads for large scanned files, clear per-file status (uploading, verified, rejected with a reason), and a retry path that did not force the borrower to pick the file again from scratch.',
-      "On the API side, the win was an endpoint that accepted a partial application and returned exactly which fields were still missing — instead of the frontend trying to track completeness rules that could drift out of sync with backend validation.",
+      'On the API side, the win was an endpoint that accepted a partial application and returned exactly which fields were still missing — instead of the frontend trying to track completeness rules that could drift out of sync with backend validation.',
       "None of this is unique to loan applications — the same shape applies to any long, resumable, multi-step form. The core idea is: let the backend be the source of truth for what's valid and what's missing, and keep the frontend focused on making that state easy to navigate.",
     ],
   },
